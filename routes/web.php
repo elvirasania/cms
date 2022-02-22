@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,16 +17,24 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return "selamat datang";
-});
+//prak 1//
+// Route::get('/', function () {
+//     return "selamat datang";
+// });
 
-Route::get('/about', function () {
-    echo "NIM     : 2041720080
-            Nama   : Elvira sania Mufida
-            Kelas  : TI -2G";
-});
+// Route::get('/about', function () {
+//     echo "NIM     : 2041720080
+//             Nama   : Elvira sania Mufida
+//             Kelas  : TI -2G";
+// });
 
-Route::get('/articles/{id}', function ($id) {
-    return "Ini adalah halaman Artikel dengan ID ke-".$id;
-});
+// Route::get('/articles/{id}', function ($id) {
+//     return "Ini adalah halaman Artikel dengan ID ke-".$id;
+// });
+
+//prak2 bagian1 //
+Route::get('/', [PageController::class, 'index']);
+
+Route::get('/about', [PageController::class, 'about']);
+
+Route::get('/articles/{id}', [PageController::class, 'articles']);

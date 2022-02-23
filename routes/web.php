@@ -4,6 +4,11 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\TentangController;
+use App\Http\Controllers\UtamaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +46,27 @@ use App\Http\Controllers\ArticleController;
 // Route::get('/articles/{id}', [PageController::class, 'articles']);
 
 //prak2 bagian2//
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/about', [AboutController::class, 'about']);
-Route::get('/articles/{id}', [ArticleController::class, 'articles']);
+// Route::get('/', [HomeController::class, 'index']);
+// Route::get('/about', [AboutController::class, 'about']);
+// Route::get('/articles/{id}', [ArticleController::class, 'articles']);
+
+// home
+Route::get('/', [UtamaController::class, 'index']);
+
+// news
+Route::prefix('/news')->group(function(){
+    Route::get('/{params}', [NewsController::class, 'index']);
+});
+
+// program
+Route::controller(ProgramController::class)->group(function(){
+    Route::get('/program/{params}', 'index');
+});
+
+// products
+Route::controller(ProductController::class)->group(function(){
+    Route::get('/product/{params}', 'index');
+});
+
+// about-us
+Route::get('/about-us', [TentangController::class, 'index']);

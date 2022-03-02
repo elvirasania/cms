@@ -18,4 +18,12 @@ class HomeController extends Controller
     public function clients(){
         return view('app.page.clients');
     }
+
+    public function contact(){
+        return view('app.page.contact');
+    }
+
+    public function testimonial(){
+        return view('app.page.testimonial');
+    }
 }

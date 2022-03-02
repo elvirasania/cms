@@ -10,4 +10,12 @@ class HomeController extends Controller
     public function index(){
         return view('app.page.index');
     }
+
+    public function about(){
+        return view('app.page.about');
+    }
+
+    public function clients(){
+        return view('app.page.clients');
+    }
 }

@@ -76,3 +76,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', [App\Http\Controllers\Sock\HomeController::class, 'index']);
 Route::get('/about', [App\Http\Controllers\Sock\HomeController::class, 'about']);
+Route::get('/clients', [App\Http\Controllers\Sock\HomeController::class, 'clients']);

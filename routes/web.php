@@ -70,3 +70,9 @@ Route::controller(ProductController::class)->group(function(){
 
 // about-us
 Route::get('/about-us', [TentangController::class, 'index']);
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [App\Http\Controllers\Sock\HomeController::class, 'index']);
+Route::get('/about', [App\Http\Controllers\Sock\HomeController::class, 'about']);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Sock;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -16,7 +17,8 @@ class HomeController extends Controller
     }
 
     public function clients(){
-        return view('app.page.clients');
+        $product = Product::all();
+        return view('app.page.clients', compact('product'));
     }
 
     public function contact(){

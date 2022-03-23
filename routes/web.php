@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\UtamaController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,7 +71,9 @@ Route::controller(ProductController::class)->group(function(){
 
 // about-us
 Route::get('/about-us', [TentangController::class, 'index']);
-// Auth::routes();
+
+// prak js 6//
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

@@ -11,6 +11,7 @@ use App\Http\Controllers\TentangController;
 use App\Http\Controllers\UtamaController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\js10\ArticleController as Js10ArticleController;
+use App\Models\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,4 +85,5 @@ Route::get('/clients', [App\Http\Controllers\Sock\HomeController::class, 'client
 Route::get('/contact', [App\Http\Controllers\Sock\HomeController::class, 'contact']);
 Route::get('/testimonial', [App\Http\Controllers\Sock\HomeController::class, 'testimonial']);
 Route::resource('articles', Js10ArticleController::class);
+Route::get('/article/cetak_pdf', [Js10ArticleController::class, 'cetak_pdf'])->name('cetak_pdf');
 

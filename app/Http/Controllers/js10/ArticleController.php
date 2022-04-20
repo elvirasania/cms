@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Upload;
+namespace App\Http\Controllers\js10;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
@@ -16,7 +16,7 @@ class ArticleController extends Controller
     public function index()
     {
         $article = Article::all();
-        return view('upload.index', ['articles' => $article]);
+        return view('js10.index', ['articles' => $article]);
     }
 
     /**
@@ -26,7 +26,7 @@ class ArticleController extends Controller
      */
     public function create(Request $request)
     {
-        return view('upload.create');
+        return view('js10.create');
     }
 
     /**

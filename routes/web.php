@@ -10,6 +10,7 @@ use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\UtamaController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Upload\ArticleController as UploadArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,4 +83,5 @@ Route::get('/about', [App\Http\Controllers\Sock\HomeController::class, 'about'])
 Route::get('/clients', [App\Http\Controllers\Sock\HomeController::class, 'clients']);
 Route::get('/contact', [App\Http\Controllers\Sock\HomeController::class, 'contact']);
 Route::get('/testimonial', [App\Http\Controllers\Sock\HomeController::class, 'testimonial']);
+Route::resource('articles', UploadArticleController::class);
 
